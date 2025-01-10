@@ -1,7 +1,7 @@
 "use client";
 
 import Lottie from "react-lottie";
-import animation from "../assests/Animation - 1733439470989.json";
+import animation from "../assests/Animation-1733439470989.json";
 import { Btn } from "./button";
 import ProgressBar from "./progressbar";
 import ProjectCard from "./projectcard";
