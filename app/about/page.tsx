@@ -13,8 +13,10 @@ export default function About() {
   function mouseHandler(e : React.MouseEvent) {
     const x = e.pageX / 50;
     const y = e.pageY / 50;
-    ref.current ? ref.current.style.right = x + "px" : null
-    ref.current ? ref.current.style.bottom = y + "px" : null
+    if (ref.current) {
+      ref.current.style.right = x + "px";
+      ref.current.style.bottom = y + "px";
+    }
   }
 
   return (
@@ -26,7 +28,7 @@ export default function About() {
               About my-self
             </h1>
             <p className="text-4xl">
-              Hi, I'm <span className="text-[#35c0d8]">Khubaib Shahid</span>—a
+              Hi, I&apos;m <span className="text-[#35c0d8]">Khubaib Shahid</span>—a
               passionate front-end developer specializing in creating dynamic
               and visually stunning web applications.
             </p>
