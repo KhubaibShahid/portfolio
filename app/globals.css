@@ -9,13 +9,214 @@
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #0a0a0a;
+    --background: #222222;
     --foreground: #ededed;
   }
 }
 
 body {
   color: var(--foreground);
-  background: var(--background);
+  background: black;
   font-family: Arial, Helvetica, sans-serif;
+}
+
+.hero-section {
+  background-image: url("./assests/hero-bg.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center center;
+}
+
+.ul {
+  display: flex;
+  /* position: sticky;
+  top: 0;
+  left: 0; */
+  transform: translate(-50%, -50%);
+}
+
+.ul .li div {
+  width: 80px;
+  height: 80px;
+  background-color: #fff;
+  text-align: center;
+  line-height: 80px;
+  font-size: 35px;
+  margin: 0 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  position: relative;
+  overflow: hidden;
+  border: 3px solid #fff;
+  z-index: 1;
+}
+
+.ul .li div .icon {
+  position: relative;
+  color: #262626;
+  transition: 0.5s;
+  z-index: 3;
+}
+
+.ul .li div:hover .icon {
+  color: #fff;
+  transform: rotateY(360deg);
+}
+
+.ul .li div:before {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #f00;
+  transition: 0.3s;
+  z-index: 2;
+}
+
+.ul .li div:hover:before {
+  top: 0;
+}
+
+.ul .li .html:before {
+  background: #de4a24;
+}
+
+.ul .li .css:before {
+  background: #254bdf;
+}
+
+.ul .li .js:before {
+  background: #f7e11f;
+}
+
+.ul .li .ts:before {
+  background: #377cc8;
+}
+
+.ul .li .react:before {
+  background: #81e0ff;
+}
+
+.ul .li .next:before, .ul .li .github::before, .ul .li .twitter::before {
+  background: black;
+}
+
+.ul .li .firebase:before {
+  background: #ffcd32;
+}
+
+.ul .li .tailwind:before {
+  background: #3ebff8;
+}
+
+.ul .li .redux:before {
+  background: #7a50be;
+}
+
+.ul .li .sass:before {
+  background: #ce6b9c;
+}
+
+.ul .li .git:before {
+  background: #f05539;
+}
+
+.ul .li .facebook:before {
+  background: #086dff;
+}
+
+.ul .li .linkedin:before {
+  background: #1469c7;
+}
+
+.ul .li .tiktok:before {
+  background: #ff085f;
+}
+
+.ul .li .instagram:before {
+  background: #833ab4;
+  background: linear-gradient(
+    to right,
+    #833ab4,#fd1d1d,#fcb045
+  );
+}
+
+.image-wrapper {
+  /* height: 12rem;
+  width: 12rem; */
+  border-radius: 6px;
+  /* background-color: #ccc; */
+  display: flex;
+  align-items: center;
+  text-align: center;
+  line-height: 1.6;
+}
+.image-wrapper .img {
+  height: auto;
+  max-width: 100%;
+}
+
+.shine {
+  position: relative;
+  overflow: hidden;
+}
+
+.shine::before {
+  background: linear-gradient(to right, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.3) 100%);
+  content: "";
+  display: block;
+  height: 100%;
+  left: -75%;
+  position: absolute;
+  top: 0;
+  transform: skewX(-25deg);
+  width: 50%;
+  z-index: 2;
+}
+
+.shine:hover::before, .shine:focus::before {
+  animation: shine 0.85s;
+}
+
+@keyframes shine {
+  100% {
+    left: 125%;
+  }
+}
+
+
+.projects {
+  background: url(./assests/gridbg.jpeg) no-repeat;
+  background-size: cover;
+}
+
+/* .about {
+  background: url(./assests/round.gif) no-repeat;
+  background-size: contain;
+  background-position: center center;
+  background-attachment: fixed;
+  background-color: black;
+} */
+
+.animated-img {
+  transition: left 0.5s ease, bottom 0.5s ease;
+  bottom: 10px;
+  right: 10px;
+}
+
+.bg-royal {
+  background: #0F2027;
+background: -webkit-linear-gradient(to right, #2C5364, #203A43, #0F2027);
+ background: linear-gradient(to right, #2C5364, #203A43, #0F2027);
+
+}
+
+.bg-wall {
+  background: url(./assests/grid.jpg) no-repeat;
+  background-size: cover;
+  background-position: center;
 }
