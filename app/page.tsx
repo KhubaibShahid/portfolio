@@ -1,6 +1,6 @@
 "use client";
 
-import Lottie from "react-lottie";
+// import Lottie from "react-lottie";
 import animation from "./assests/Animation-1733439470989.json";
 import { Btn } from "./components/button";
 import ProgressBar from "./components/progressbar";
@@ -9,10 +9,11 @@ import PROJECT1 from "./assests/project-air.png";
 import PROJECT2 from "./assests/project-gossip.png";
 import Expertise from "./components/expertise";
 import Link from "next/link";
-import { useState, useEffect } from "react";
+import dynamic from "next/dynamic";
+
+const Lottie = dynamic(() => import("react-lottie"), {ssr: false})
 
 export default function Home() {
-  const [animationOption, setAnimationOption] = useState<unknown>();
 
   const defaultOption = {
     loop: true,
@@ -22,10 +23,6 @@ export default function Home() {
       preserveAspectRatio: "xMidYMid slice",
     },
   };
-
-  useEffect(() => {
-    setAnimationOption(defaultOption);
-  }, []);
 
   return (
     <div className="main">
@@ -96,7 +93,7 @@ export default function Home() {
             <Lottie
               height={"100%"}
               width={"100%"}
-              options={animationOption}
+              options={defaultOption}
             ></Lottie>
           </div>
           <div className="flex gap-3 md:hidden">
