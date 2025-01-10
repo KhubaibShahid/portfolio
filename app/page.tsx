@@ -9,8 +9,11 @@ import PROJECT1 from "./assests/project-air.png";
 import PROJECT2 from "./assests/project-gossip.png";
 import Expertise from "./components/expertise";
 import Link from "next/link";
+import { useState, useEffect } from "react";
 
 export default function Home() {
+  const [animationOption, setAnimationOption] = useState<unknown>();
+
   const defaultOption = {
     loop: true,
     autoplay: true,
@@ -19,6 +22,10 @@ export default function Home() {
       preserveAspectRatio: "xMidYMid slice",
     },
   };
+
+  useEffect(() => {
+    setAnimationOption(defaultOption);
+  }, []);
 
   return (
     <div className="main">
@@ -89,7 +96,7 @@ export default function Home() {
             <Lottie
               height={"100%"}
               width={"100%"}
-              options={defaultOption}
+              options={animationOption}
             ></Lottie>
           </div>
           <div className="flex gap-3 md:hidden">
